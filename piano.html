@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+ <!--start by 21:11 mat 1st 2020-->
+   <head>
+        <meta name="keywords" content="Piano" />
+        <title>Piano</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+         <style>
+             .pianobox{
+                       width:500px;
+                       height:250px;
+                       background-color: black;
+                       border-radius: 25px;
+                       display:flex;
+                       align-items:flex-end;
+                       margin-left:400px;
+                       margin-top:130px;
+                       justify-content:center;
+                       position: fixed;
+             }
+             .piano_btn{
+                 width:50px;
+                 height:50px;
+                 background-color: orangered;
+                 margin:10px;
+                 text-align: center;
+                 box-shadow: 5px 10px 8px #888888;
+                 
+             }
+             .piano_btn:hover {
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
+                    }
+
+             #margin_change{
+                 margin-right:200px;
+             }
+             .piano_btn:hover #translate {
+                 transform: translateY(-80px) scale(2);
+                 color: aqua;
+                
+                  }
+                  .smallCircles{
+                      width:50px;
+                      height:50px;
+                      background-color: green;
+                      border-radius:50%;
+                      box-shadow:10px 10px 5px lightgreen;
+                      margin:5px;
+                      transition: all 4s linear;
+                      text-align: center;
+                      
+                  }
+                  .smallDiamonds{
+                      width:50px;
+                      height:50px;
+                      background-color: purple;
+                      border-radius:20px;
+                      box-shadow:10px 10px 5px lightpink;
+                      transition: all 4s ease-in  ;
+                      text-align: center;
+                     
+                  }
+                 .smallCircles.xyz {
+                    transform: translateY(500px) rotate(20deg);
+                    
+                }
+                .smallDiamonds.qwe {
+                        transform: translateY(540px) rotate(20deg);
+                    
+                }
+                .smallCircles1{
+                      width:50px;
+                      height:50px;
+                      background-color: green;
+                      border-radius:50%;
+                      box-shadow:10px 10px 5px lightgreen;
+                      margin:5px;
+                      transition: all 4s linear;
+                      text-align: center;
+                      
+                  }
+                  .smallDiamonds1{
+                      width:50px;
+                      height:50px;
+                      background-color: purple;
+                      border-radius:20px;
+                      box-shadow:10px 10px 5px lightpink;
+                      transition: all 4s ease-in  ;
+                      text-align: center;
+                     
+                  }
+                 .smallCircles1.xyz {
+                    transform: translateY(500px) rotate(20deg);
+                    
+                }
+                .smallDiamonds1.qwe {
+                        transform: translateY(540px) rotate(20deg);
+                    
+                }
+            .bgScroll{
+                display: flex;
+            }
+
+
+         </style>
+    </head>
+ 
+    <body>
+         <!-- create background popups -->
+         <div class="bgScroll">
+         <div id ="sc" class="smallCircles"><p>H</p></div>
+        <div  id="sd" class="smallDiamonds"><p>E</p></div>
+        <div  id="sd" class="smallCircles1"><p>M</p></div>
+        <div  id="sd" class="smallDiamonds1"><p>U</p></div>
+        <div id ="sc" class="smallCircles"><p>H</p></div>
+        <div  id="sd" class="smallDiamonds"><p>E</p></div>
+        <div  id="sd" class="smallCircles1"><p>M</p></div>
+        <div  id="sd" class="smallDiamonds1"><p>U</p></div>
+        <div id ="sc" class="smallCircles"><p>H</p></div>
+        <div  id="sd" class="smallDiamonds"><p>E</p></div>
+        <div  id="sd" class="smallCircles1"><p>M</p></div>
+        <div  id="sd" class="smallDiamonds1"><p>U</p></div>
+        <div id ="sc" class="smallCircles"><p>H</p></div>
+        <div  id="sd" class="smallDiamonds"><p>E</p></div>
+        <div  id="sd" class="smallCircles1"><p>M</p></div>
+        <div  id="sd" class="smallDiamonds1"><p>U</p></div>
+        <div id ="sc" class="smallCircles"><p>H</p></div>
+        <div  id="sd" class="smallDiamonds"><p>E</p></div>
+        <div  id="sd" class="smallCircles1"><p>M</p></div>
+        <div  id="sd" class="smallDiamonds1"><p>U</p></div>
+        <div id ="sc" class="smallCircles"><p>H</p></div>
+        <div  id="sd" class="smallDiamonds"><p>E</p></div>
+        <div  id="sd" class="smallCircles1"><p>M</p></div>
+        <div  id="sd" class="smallDiamonds1"><p>U</p></div>
+        
+    </div>
+    <!-- create background popups-->
+    
+        <div class="pianobox">
+       
+            <div class="piano_btn">
+              <p id="translate">H</p>
+            </div>
+            
+            <div class="piano_btn" >
+                <p id="translate">E</p>
+            </div>
+            <div class="piano_btn">
+                <p id="translate">M</p>
+            </div>
+            <div class="piano_btn">
+                <p id="translate">U</p>
+            </div>
+        </div>
+   
+        <audio>
+            <source src="https://www.w3schools.com/jsref/horse.ogg" type="audio/ogg"></source>
+            <source src="https://www.w3schools.com/jsref/horse.mp3" type="audio/mpeg"></source>
+        </audio>
+          <script>
+                 var audio = document.getElementsByTagName("audio")[0];
+                 $(".piano_btn").mouseenter(function() {
+                 audio.play();
+                      });
+                 document.getElementsByClassName("piano_btn")[0].onmouseover = function() {
+                    var elt = document.getElementsByClassName("smallCircles");
+                     for(var i= 0;i<elt.length;i++){
+                        var element = document.getElementsByClassName("smallCircles")[i];
+                           element.classList.add("xyz");
+                     }    
+                     };
+                     document.getElementsByClassName("piano_btn")[1].onmouseover = function() {
+                    var elt = document.getElementsByClassName("smallDiamonds");
+                     for(var i= 0;i<elt.length;i++){
+                        var element = document.getElementsByClassName("smallDiamonds")[i];
+                           element.classList.add("qwe");
+                     }    
+                     };
+                     document.getElementsByClassName("piano_btn")[0].onmouseout = function() {
+                    var elt1 = document.getElementsByClassName("smallCircles");
+                     for(var i= 0;i<elt1.length;i++){
+                        var element = document.getElementsByClassName("smallCircles")[i];
+                           element.classList.remove("xyz");
+                     } 
+                           
+                     };
+                     document.getElementsByClassName("piano_btn")[1].onmouseout = function() {
+                    var elt1 = document.getElementsByClassName("smallDiamonds");
+                     for(var i= 0;i<elt1.length;i++){
+                        var element = document.getElementsByClassName("smallDiamonds")[i];
+                           element.classList.remove("qwe");
+                     } 
+                           
+                     };
+                     document.getElementsByClassName("piano_btn")[2].onmouseover = function() {
+                    var elt = document.getElementsByClassName("smallCircles1");
+                     for(var i= 0;i<elt.length;i++){
+                        var element = document.getElementsByClassName("smallCircles1")[i];
+                           element.classList.add("xyz");
+                     }    
+                     };
+                     document.getElementsByClassName("piano_btn")[3].onmouseover = function() {
+                    var elt = document.getElementsByClassName("smallDiamonds1");
+                     for(var i= 0;i<elt.length;i++){
+                        var element = document.getElementsByClassName("smallDiamonds1")[i];
+                           element.classList.add("qwe");
+                     }    
+                     };
+                     document.getElementsByClassName("piano_btn")[2].onmouseout = function() {
+                    var elt1 = document.getElementsByClassName("smallCircles1");
+                     for(var i= 0;i<elt1.length;i++){
+                        var element = document.getElementsByClassName("smallCircles1")[i];
+                           element.classList.remove("xyz");
+                     } 
+                           
+                     }; 
+                     document.getElementsByClassName("piano_btn")[3].onmouseout = function() {
+                    var elt1 = document.getElementsByClassName("smallDiamonds1");
+                     for(var i= 0;i<elt1.length;i++){
+                        var element = document.getElementsByClassName("smallDiamonds1")[i];
+                           element.classList.remove("qwe");
+                     } 
+                           
+                     }; 
+                   
+          </script>
+    </body>
+ 
+</html>
+ 
